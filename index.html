@@ -225,17 +225,26 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 40px;
+  box-sizing: border-box;
 }
 
 .cv-zoom {
   max-width: 800px;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   cursor: zoom-in;
 }
 
 .cv-zoom img {
-  width: 100%;
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain; /* 👈 ensures full image shows */
   transition: transform 0.2s ease;
 }
 
@@ -431,6 +440,15 @@ body::after {
     margin: 20px 20px 10px;
     z-index: 1;
   }
+
+  .cv-zoom {
+    cursor: default;
+  }
+
+  .cv-zoom img {
+    transform: none !important;
+  }
+
 
   
 }
