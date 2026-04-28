@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
 
+<link rel="preload" as="image" href="projects/55e5ed00-ee1d-462b-b537-7886786cdddf.JPEG">
+<link rel="preload" as="image" href="concept_work/ashwyn-pallen-angle-hall-2-ovp.jpg">
+
 <style>
 
 html {
@@ -141,6 +144,10 @@ body::after {
   transform: translateY(0);
 }
 
+img {
+  image-rendering: auto;
+}
+
 /* CONTENT ABOVE GRID */
 .page > * {
   position: relative;
@@ -158,6 +165,7 @@ body::after {
 .grid-track {
   display: flex;
   width: 100%;
+  will-change: transform;
   transition: transform 0.6s ease;
 }
 
@@ -547,31 +555,161 @@ body::after {
 <div class="grid-track" id="graphics-track">
 
 <div class="grid-set">
-  <div class="grid-item"><img src="projects/55e5ed00-ee1d-462b-b537-7886786cdddf.JPEG" onclick="openLightbox(this.src)"><p>Onscreen Wedding Programmes</p></div>
-  <div class="grid-item"><img src="projects/Fake Newspaper Prop tattered n folded.jpg" onclick="openLightbox(this.src)"><p>Newspaper</p></div>
-  <div class="grid-item"><img src="projects/IMG_5771.JPEG" onclick="openLightbox(this.src)"><p>Hacking Laptop Screen</p></div>
-  <div class="grid-item"><img src="projects/IMG_5506.JPEG" onclick="openLightbox(this.src)"><p>Bakery Sign and Ingredient Bags</p></div>
+  <div class="grid-item">
+    <img 
+      src="projects/55e5ed00-ee1d-462b-b537-7886786cdddf.JPEG"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/55e5ed00-ee1d-462b-b537-7886786cdddf.JPEG')">
+    <p>Onscreen Wedding Programmes</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/Fake Newspaper Prop tattered n folded.jpg"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/Fake Newspaper Prop tattered n folded.jpg')">
+    <p>Newspaper</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5771.JPEG"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5771.JPEG')">
+    <p>Hacking Laptop Screen</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5506.JPEG"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5506.JPEG')">
+    <p>Bakery Sign and Ingredient Bags</p>
+  </div>
 </div>
 
 <div class="grid-set">
-  <div class="grid-item"><img src="projects/IMG_5664.JPEG" onclick="openLightbox(this.src)"><p>Assorted Paperwork File</p></div>
-  <div class="grid-item"><img src="projects/Insulin Label.jpg" onclick="openLightbox(this.src)"><p>Insulin Label</p></div>
-  <div class="grid-item"><img src="projects/IMG_5770.JPEG" onclick="openLightbox(this.src)"><p>Hacker Laptop Homescreen</p></div>
-  <div class="grid-item"><img src="projects/IMG_5683.JPEG" onclick="openLightbox(this.src)"><p>Insulin pack cover-ups</p></div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5664.JPEG" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5664.JPEG')">
+      <p>Assorted Paperwork File</p>
+  </div>
+  
+  <div class="grid-item">
+    <img 
+      src="projects/Insulin Label.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/Insulin Label.jpg')">
+      <p>Insulin Label</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5770.JPEG"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5770.JPEG')">
+      <p>Hacker Laptop Homescreen</p>
+  </div>
+  
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5683.JPEG"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5683.JPEG')">
+      <p>Insulin pack cover-ups</p>
+  </div>
+
 </div>
 
 <div class="grid-set">
-  <div class="grid-item"><img src="projects/IMG_1264.JPEG" onclick="openLightbox(this.src)"><p>Circus Tickets</p></div>
-  <div class="grid-item"><img src="projects/IMG_5668.JPEG" onclick="openLightbox(this.src)"><p>Wedding Programme</p></div>
-  <div class="grid-item"><img src="projects/SC39 - Voice Recording Screen.jpg" onclick="openLightbox(this.src)"><p>Voice Recording Software</p></div>
-  <div class="grid-item"><img src="projects/750751f8-03ac-4223-9eaf-4c356f86e056.JPEG" onclick="openLightbox(this.src)"><p>Record label Cover-up</p></div>
-</div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_1264.JPEG"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_1264.JPEG')">
+      <p>Circus Tickets</p>
+  </div>
+  
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5668.JPEG" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5668.JPEG')">
+      <p>Wedding Programme</p>
+  </div>
+  
+  <div class="grid-item">
+    <img 
+      src="projects/SC39 - Voice Recording Screen.jpg" 
+      loading="lazy"
+      decoding="async"      
+      onclick="openLightbox('projects/SC39 - Voice Recording Screen.jpg')">
+      <p>Voice Recording Software</p>
+    </div>
+  
+    <div class="grid-item">
+      <img 
+        src="projects/750751f8-03ac-4223-9eaf-4c356f86e056.JPEG"
+        loading="lazy"
+        decoding="async"          
+        onclick="openLightbox('projects/750751f8-03ac-4223-9eaf-4c356f86e056.JPEG')">
+        <p>Record label Cover-up</p>
+    </div>
+
+  </div>
 
 <div class="grid-set">
-  <div class="grid-item"><img src="projects/Record_Label_02_ep9.png" onclick="openLightbox(this.src)"><p>Record Label</p></div>
-  <div class="grid-item"><img src="projects/IMG_5730.JPEG" onclick="openLightbox(this.src)"><p>Large Bin Cover-up</p></div>
-  <div class="grid-item"><img src="projects/IMG_5732.JPEG" onclick="openLightbox(this.src)"><p>Large Recycling Bin Cover-up</p></div>
-  <div class="grid-item"><img src="projects/IMG_5777.JPEG" onclick="openLightbox(this.src)"><p>Book Cover-up</p></div>
+  
+  <div class="grid-item">
+    <img 
+      src="projects/Record_Label_02_ep9.png"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/Record_Label_02_ep9.png')">
+      <p>Record Label</p>
+  </div>
+  
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5730.JPEG"
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5730.JPEG')">
+      <p>Large Bin Cover-up</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5732.JPEG" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5732.JPEG')">
+      <p>Large Recycling Bin Cover-up</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="projects/IMG_5777.JPEG" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('projects/IMG_5777.JPEG')">
+      <p>Book Cover-up</p>
+  </div>
+
 </div>
 
 </div>
@@ -593,31 +731,163 @@ body::after {
 
 
 <div class="grid-set">
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-angle-hall-2-ovp.jpg" onclick="openLightbox(this.src)"><p>Giant's Hall (Olly Captured)</p></div>
-  <div class="grid-item"><img src="concept_work/ovp scne rtey.png" onclick="openLightbox(this.src)"><p>Underpass - Demon Kid</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-olly-edit-ovp.jpg" onclick="openLightbox(this.src)"><p>Olly Charcter Design</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-fina.jpg" onclick="openLightbox(this.src)"><p>Rowing For Survival</p></div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-angle-hall-2-ovp.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox(this.src)">
+      <p>Giant's Hall (Olly Captured)</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ovp scne rtey.png" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ovp scne rtey.png')">
+      <p>Underpass - Demon Kid</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-olly-edit-ovp.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-olly-edit-ovp.jpg')">
+      <p>Olly Charcter Design</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-fina.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-fina.jpg')">
+      <p>Rowing For Survival</p>
+  </div>
+
 </div>
 
 <div class="grid-set">
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-ashwyn-pallen-ovp-character-2.jpg" onclick="openLightbox(this.src)"><p>Medieval Alley Face-off</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-breakdown-2.jpg" onclick="openLightbox(this.src)"><p>Medieval Alley Process</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-x-ray-map.jpg" onclick="openLightbox(this.src)"><p>Medieval Alley Game Level Design</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-fina-render-vlose.jpg" onclick="openLightbox(this.src)"><p>Rowing For Survival Close-up</p></div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-ashwyn-pallen-ovp-character-2.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-ashwyn-pallen-ovp-character-2.jpg')">
+      <p>Medieval Alley Face-off</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-breakdown-2.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-breakdown-2.jpg')">
+      <p>Medieval Alley Process</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-x-ray-map.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-x-ray-map.jpg')">
+      <p>Medieval Alley Game Level Design</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-fina-render-vlose.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-fina-render-vlose.jpg')">
+      <p>Rowing For Survival Close-up</p>
+  </div>
+
 </div>
 
 <div class="grid-set">
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-rv-itteration-2.jpg" onclick="openLightbox(this.src)"><p>RV Concept Iteration 1</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-rv-itteration-3.jpg" onclick="openLightbox(this.src)"><p>RV Concept Iteration 2</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-rv-itteration-4.jpg" onclick="openLightbox(this.src)"><p>RV Concept Iteration 3</p></div>
-  <div class="grid-item"><img src="concept_work/all rv itterations.jpg" onclick="openLightbox(this.src)"><p>RV Concepts All Iterations</p></div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-rv-itteration-2.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-rv-itteration-2.jpg')">
+      <p>RV Concept Iteration 1</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-rv-itteration-3.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-rv-itteration-3.jpg')">
+    <p>RV Concept Iteration 2</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-rv-itteration-4.jpg" 
+      loading="lazy"
+      decoding="async"
+      onclick="openLightbox('concept_work/ashwyn-pallen-rv-itteration-4.jpg')">
+      <p>RV Concept Iteration 3</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/all rv itterations.jpg"
+      loading="lazy"
+      decoding="async" 
+      onclick="openLightbox('concept_work/all rv itterations.jpg')">
+      <p>RV Concepts All Iterations</p>
+  </div>
+
 </div>
 
 <div class="grid-set">
-  <div class="grid-item"><img src="concept_work/fin_1.jpg" onclick="openLightbox(this.src)"><p>Retribution - Scene</p></div>
-  <div class="grid-item"><img src="concept_work/fin_3.jpg" onclick="openLightbox(this.src)"><p>Retribution - Antagonist</p></div>
-  <div class="grid-item"><img src="concept_work/Fin_5.jpg" onclick="openLightbox(this.src)"><p>Retribution - Protagonist</p></div>
-  <div class="grid-item"><img src="concept_work/ashwyn-pallen-final-overpaint-sitting-at-desk.jpg" onclick="openLightbox(this.src)"><p>Polymath Studio</p></div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/fin_1.jpg" 
+      loading="lazy"
+      decoding="async" 
+      onclick="openLightbox('concept_work/fin_1.jpg')">
+      <p>Retribution - Scene</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/fin_3.jpg" 
+      loading="lazy"
+      decoding="async" 
+      onclick="openLightbox('concept_work/fin_3.jpg')">
+      <p>Retribution - Antagonist</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/Fin_5.jpg" 
+      loading="lazy"
+      decoding="async"       
+      onclick="openLightbox('concept_work/Fin_5.jpg')">
+      <p>Retribution - Protagonist</p>
+  </div>
+
+  <div class="grid-item">
+    <img 
+      src="concept_work/ashwyn-pallen-final-overpaint-sitting-at-desk.jpg" 
+      loading="lazy"
+      decoding="async" 
+      onclick="openLightbox('concept_work/ashwyn-pallen-final-overpaint-sitting-at-desk.jpg')">
+      <p>Polymath Studio</p>
+  </div>
+
 </div>
 
     </div>
