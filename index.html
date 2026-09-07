@@ -80,31 +80,55 @@ body::after {
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 22px;
+
   margin-top: 20px;
   padding-top: 20px;
+
   border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
 }
 
 .nav a {
   text-decoration: none;
   color: #444;
   font-size: 13px;
+  line-height: 1.4;
+  width: fit-content;
   position: relative;
 }
 
 .nav a::after {
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  width:0;
-  height:2px;
-  background:rgb(164, 186, 212);
-  transition:0.3s;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+  height: 2px;
+
+  background: rgb(164, 186, 212);
+  transition: width 0.3s ease;
 }
+
 .nav a:hover::after {
-  width:100%;
+  width: 100%;
+}
+
+.contact {
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 /* MAIN */
@@ -114,38 +138,66 @@ body::after {
   overflow: hidden;
   display: flex;
 }
+
 /* PAGE SYSTEM */
+
 .page {
   position: absolute;
   inset: 0;
+
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.6s ease;
-}
 
-.main, .page {
-  overflow: hidden;
-}
-
-.page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
   z-index: 0;
 
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
-
-  background-size: 80px 80px;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }
 
 .page.active {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
-  transform: translateY(0);
+
+  z-index: 2;
 }
 
+.main,
+.page {
+  overflow: hidden;
+}
+
+/* GRID BACKGROUND */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+}
+
+/* KEEP PAGE CONTENT ABOVE GRID */
+.page > * {
+  position: relative;
+  z-index: 1;
+}
 img {
   image-rendering: auto;
 }
@@ -355,31 +407,44 @@ img {
     height: auto;
   }
 
-  /* PAGE → SECTION */
-  .page {
-    display: flex;
-    flex-direction: column;
-    padding-top: 60px;
-    position: relative;
-    opacity: 1;
-    pointer-events: auto;
-    transform: none;
-      scroll-margin-top: 100px;
+/* PAGE → SECTION */
 
-    min-height: auto;
-    padding-bottom: 40px;
-  }
+.page,
+.page.active {
+  display: flex;
+  flex-direction: column;
 
-  /* SECTION HEADINGS */
-  .page::after {
-    display: block;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin: 20px;
-    text-transform: uppercase;
-    opacity: 0.5;
-  }
+  position: relative;
 
+  width: 100%;
+  height: auto;
+  min-height: auto;
+
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: none;
+  z-index: 1;
+
+  overflow: visible;
+
+  scroll-margin-top: 100px;
+}
+
+/* SECTION HEADINGS */
+
+.page::after {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 20px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
   /* REMOVE ARROWS */
   .arrow {
     display: none;
@@ -526,28 +591,176 @@ img {
 
 <!-- SIDEBAR -->
 <div class="sidebar">
+
   <div>
     <h1><b>ASHWYN PALLEN</b></h1>
     <h2>GRAPHICS FOR FILM & TV</h2>
+
     <div class="nav">
-      <a href="#" onclick="showPage('graphics')">GRAPHICS</a>
-      <a href="#" onclick="showPage('concept')">CONCEPT ART</a>
-      <a href="#" onclick="showPage('cv')">C.V</a>
+
+      <div class="nav-group">
+        <div class="nav-heading"><b>GRAPHICS</b></div>
+
+        <a href="#" onclick="showPage('music-venue')">
+          Project 1: Music Venue
+        </a>
+
+        <a href="#" onclick="showPage('police-ui')">
+          Project 2: Police UI
+        </a>
+
+        <a href="#" onclick="showPage('graphics')">
+          Production Graphics
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-heading"><b>CONCEPT ART</b></div>
+
+        <a href="#" onclick="showPage('concept')">
+          Pre-production Concepts
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-heading"><b>C.V</b></div>
+
+        <a href="#" onclick="showPage('cv')">
+          ASHWYN PALLEN C.V
+        </a>
+      </div>
+
     </div>
   </div>
 
-  <div>
-    CONTACT:
+  <div class="contact">
+    CONTACT:<br>
     ashwynKpallen@gmail.com
-    <br>
   </div>
+
 </div>
+
 
 <!-- MAIN -->
 <div class="main">
 
+<!-- MUSIC VENUE -->
+<div class="page active" id="music-venue">
+
+  <h3 class="section-title">Music Venue Graphics</h3>
+
+  <button class="arrow left" onclick="prevSet('music-venue')">←</button>
+
+  <div class="grid-slider">
+    <div class="grid-track" id="music-venue-track">
+
+      <!-- SET 1 -->
+      <div class="grid-set">
+
+        <div class="grid-item">
+          <img
+            src="joiners/ad_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('joiners/ad_full.webp')">
+          <p>Advertisement and Website</p>
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="joiners/poster_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('joiners/poster_thumb.webp')">
+          <p>Show Poster</p>
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="joiners/bar_menu_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('joiners/bar_menu_thumb.webp')">
+          <p>Bar Menu</p>
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="joiners/tickets_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('joiners/tickets_full.webp')">
+          <p>Tickets</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <button class="arrow right" onclick="nextSet('music-venue')">→</button>
+
+</div>
+
+<!-- POLICE UI -->
+<div class="page" id="police-ui">
+
+  <h3 class="section-title">Police UI</h3>
+
+  <button class="arrow left" onclick="prevSet('police-ui')">←</button>
+
+  <div class="grid-slider">
+    <div class="grid-track" id="police-ui-track">
+
+      <!-- SET 1 -->
+      <div class="grid-set">
+
+        <div class="grid-item">
+          <img
+            src="police/suspect_profile_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('police/suspect_profile_full.webp')">
+          <p>Incident Dashboard</p>
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="police/case_dashboard_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('police/case_dashboard_full.webp')">
+          <p>Case Database</p>
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="police/papers_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('police/papers_full.webp')">
+          <p>Suspect Profile</p>
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="police/cctv_thumb.webp"
+            loading="lazy"
+            decoding="async"
+            onclick="openLightbox('police/cctv_full.webp')">
+          <p>Evidence System</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <button class="arrow right" onclick="nextSet('police-ui')">→</button>
+
+</div>
+
 <!-- GRAPHICS -->
-<div class="page active" id="graphics">
+<div class="page" id="graphics">
 
     <h3 class="section-title">Graphics</h3>
 
@@ -919,18 +1132,43 @@ img {
 </div>
 
 <script>
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+function showPage(id) {
+
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+  } else {
+
+    document.querySelectorAll(".page").forEach(page => {
+      page.classList.remove("active");
+    });
+
+    const selectedPage = document.getElementById(id);
+
+    if (selectedPage) {
+      selectedPage.classList.add("active");
+    }
+  }
 }
 </script>
 
 <script>
 const sets = {
+  "music-venue": 0,
+  "police-ui": 0,
   graphics: 0,
   concept: 0
 };
-
 function nextSet(type){
   const track=document.getElementById(type+'-track');
   const total=track.children.length;
@@ -1021,6 +1259,44 @@ function scrollToTop() {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
+  });
+}
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+
+  if (window.innerWidth > 768) {
+
+    document.querySelectorAll(".page").forEach(page => {
+      page.classList.remove("active");
+    });
+
+    const musicVenue = document.getElementById("music-venue");
+
+    if (musicVenue) {
+      musicVenue.classList.add("active");
+    }
+  }
+
+});
+</script>
+
+<script>
+// MOBILE: always open website at the top
+if (window.innerWidth <= 768) {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
+    }, 0);
   });
 }
 </script>
